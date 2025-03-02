@@ -2,5 +2,5 @@
 import { TodoItem } from "./TodoItem"
 
 export interface TodoItemWithDate extends TodoItem{
-    dueDate: Date;
+    dueDate: string;
 }

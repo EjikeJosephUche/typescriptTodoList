@@ -7,12 +7,12 @@ class TodoList {
         this.idIncrement = 1;
     }
     // A function to add a Todo Item
-    addTodo(task, dueDate) {
+    addTodo(task) {
         const newTodo = {
             id: this.idIncrement++,
             task,
             completed: false,
-            dueDate,
+            dueDate: this.formatDate(),
         };
         this.todos.push(newTodo);
         console.log(`✅ Todo Added successfully`);
@@ -67,6 +67,13 @@ class TodoList {
     clearAllCompletedTodos() {
         this.todos = this.todos.filter((todo) => !todo.completed);
         console.log(`✅ Completed Todos cleared Successfully`);
+    }
+    formatDate() {
+        const date = new Date();
+        const year = date.getFullYear();
+        const month = ("0" + (date.getMonth() + 1)).slice(-2);
+        const day = ("0" + date.getDate()).slice(-2);
+        return `${year}-${month}-${day}`;
     }
 }
 exports.TodoList = TodoList;

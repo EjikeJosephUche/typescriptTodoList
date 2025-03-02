@@ -11,9 +11,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const TodoList_1 = require("./classes/TodoList");
 const todoList = new TodoList_1.TodoList();
 // Add Todo items
-todoList.addTodo("Repair my phone", new Date("2025-03-01"));
-todoList.addTodo("Go to church", new Date("2025-02-28"));
-todoList.addTodo("Complete my mentorship session", new Date("2025-03-05"));
+todoList.addTodo("Repair my phone");
+todoList.addTodo("Go to church");
+todoList.addTodo("Complete my mentorship session");
 // const formattedDate = todoList.dueDate.toLocaleDateString('en-CA'); // 'en-CA' uses the 'YYYY-MM-DD' format
 // console.log(formattedDate);
 // console.log(todoList.formattedTodos(todoList))

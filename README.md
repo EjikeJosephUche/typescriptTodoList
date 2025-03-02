@@ -37,43 +37,38 @@ To get started with this project, follow the steps below:
 
 ### 1. Clone the repository
 
-```bash
+```
 git clone https://github.com/EjikeJosephUche/typescriptTodoList.git
+```
 
 2. Install dependencies
 Navigate to the project directory and install the required dependencies:
 
 cd typscriptTodoList
-npm install
+```npm install```
 3. Run the project
 To compile and run the project:
 
 
-npm run start
+```npm run start```
 This will transpile the TypeScript code into JavaScript and execute it.
 
 
 
-Project Structure
+## Project Structure
 The project has the following structure:
 
+**typescriptTodoList/**: The root directory or the repository name.
+**src/**: This maintains all my Typescript codes resides.
+**src/classes/**: This is where all my typscript classes resides.
+**src/interfaces/**: This is wher all my typescript interfaces resides.
+**app.ts**: This is the start point or the main entrance of the typescript code.
+**dist/**: This is the transpiled Javascript code with corresponding folders with that of the typscript above.
+**package.json**: Project metadata and dependencies
+**tsconfig.json**: TypeScript configuration
+**README.md**: This README file
 
-typescriptTodoList/
-│
-├── src/
-│   ├── classes/
-│   │   └── TodoList.ts        # Class to manage todo items
-│   │
-│   ├── interfaces/
-│   │   └── TodoItem.ts        # Interface to define a todo item
-│   │
-│   ├── index.ts               # Main entry point (for testing purposes)
-│   └── utils.ts               # Helper functions (if any)
-│
-├── dist/                      # Transpiled JavaScript code
-├── package.json               # Project metadata and dependencies
-├── tsconfig.json              # TypeScript configuration
-└── README.md                  # This README file
+
 
 ## TodoItem.ts
 The TodoItem interface defines the structure for a todo item, including:
@@ -86,17 +81,17 @@ The TodoItem interface defines the structure for a todo item, including:
 ## TodoList.ts
 The TodoList class implements the following methods to manage todo items:
 
-addTodo(task: string, dueDate: Date): void: Adds a new todo item.
-completeTodo(id: number): void: Marks a todo item as completed.
-removeTodo(id: number): void: Removes a todo item by ID.
-listTodos(): TodoItem[]: Lists all todos.
-filterByCompletion(completed: boolean): TodoItem[]: Filters todos by completion status.
-updateTaskDescription(id: number, newTask: string): void: Updates the task description of a todo item.
-clearCompleted(): void: Clears all completed todos.
-formatDueDate(date: Date): string: Formats the due date as YYYY-MM-DD using the toLocaleDateString method.
+- addTodo(task: string): void: Adds a new todo item.
+- completeTodo(id: number): void: Marks a todo item as completed.
+- removeTodo(id: number): void: Removes a todo item by ID.
+- listTodos(): TodoItem[]: Lists all todos.
+- filterByCompletion(completed: boolean): TodoItem[]: Filters todos by completion status.
+- updateTaskDescription(id: number, newTask: string): void: Updates the task description of a todo item.
+- clearCompleted(): void: Clears all completed todos.
+- formatDate(date: Date): string: Formats the due date as YYYY-MM-DD using the toLocaleDateString method.
 
 ## app.ts
-This is the main entry point for testing or running the application in a development environment. It demonstrates how to use the TodoList class and interact with the todos.
+This is the main entry point for running the application in a development environment. It demonstrates how to use the TodoList class and interact with the todos.
 
 ## package.json
 This file contains the project's dependencies, scripts, and metadata.
@@ -111,15 +106,9 @@ import { TodoList } from "./classes/TodoList";
 const todoList = new TodoList();
 
 // Add Todo items
-todoList.addTodo("Repair my phone", new Date("2025-03-01"));
-todoList.addTodo("Go to church", new Date("2025-02-28"));
-todoList.addTodo("Complete my mentorship session", new Date("2025-03-05"));
-
-// const formattedDate = todoList.dueDate.toLocaleDateString('en-CA'); // 'en-CA' uses the 'YYYY-MM-DD' format
-
-// console.log(formattedDate);
-
-// console.log(todoList.formattedTodos(todoList))
+todoList.addTodo("Repair my phone");
+todoList.addTodo("Go to church");
+todoList.addTodo("Complete my mentorship session");
 
 // List all Todos
 console.log(todoList.listTodos());
@@ -143,6 +132,7 @@ console.log("Todos after clearing completed:", todoList.listTodos());
 ```
 
 **Expected Output:**
+
 ```
 ✅ Todo Added successfully
 ✅ Todo Added successfully
@@ -216,7 +206,8 @@ Todos after clearing completed: [
     completed: false,
     dueDate: 2025-03-05T00:00:00.000Z
   }
-]```
+]
+```
 
 ## TypeScript Configuration
 The project uses TypeScript, and the configuration is stored in the tsconfig.json file. The key properties include:

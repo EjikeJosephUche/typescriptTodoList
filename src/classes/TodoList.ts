@@ -5,12 +5,12 @@ export class TodoList {
     private idIncrement: number = 1;
 
     // A function to add a Todo Item
-    addTodo(task: string, dueDate:Date): void{
+    addTodo(task: string): void{
         const newTodo: TodoItemWithDate = {
             id: this.idIncrement++,
             task,
             completed: false,
-            dueDate,
+            dueDate: this.formatDate(),
         };
         this.todos.push(newTodo);
         console.log(`✅ Todo Added successfully`)   
@@ -71,5 +71,13 @@ export class TodoList {
         this.todos = this.todos.filter((todo) => !todo.completed);
         console.log(`✅ Completed Todos cleared Successfully`);
     }
+    // Utility function to format the date object
+    formatDate(): string {
+        const date: Date = new Date();
+        const year: number = date.getFullYear();
+        const month: string = ("0" + (date.getMonth() + 1)).slice(-2);
+        const day: string = ("0" + date.getDate()).slice(-2);
+        return `${year}-${month}-${day}`;
+      }
 
 }
