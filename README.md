@@ -58,25 +58,25 @@ This will transpile the TypeScript code into JavaScript and execute it.
 ## Project Structure
 The project has the following structure:
 
-**typescriptTodoList/**: The root directory or the repository name.
-**src/**: This maintains all my Typescript codes resides.
-**src/classes/**: This is where all my typscript classes resides.
-**src/interfaces/**: This is wher all my typescript interfaces resides.
-**app.ts**: This is the start point or the main entrance of the typescript code.
-**dist/**: This is the transpiled Javascript code with corresponding folders with that of the typscript above.
-**package.json**: Project metadata and dependencies
-**tsconfig.json**: TypeScript configuration
-**README.md**: This README file
+- **typescriptTodoList/**: The root directory or the repository name.
+- **src/**: This maintains all my Typescript codes resides.
+- **src/classes/**: This is where all my typscript classes resides.
+- **src/interfaces/**: This is wher all my typescript interfaces resides.
+- **app.ts**: This is the start point or the main entrance of the typescript code.
+- **dist/**: This is the transpiled Javascript code with corresponding folders with that of the typscript above.
+- **package.json**: Project metadata and dependencies
+- **tsconfig.json**: TypeScript configuration
+- **README.md**: This README file
 
 
 
 ## TodoItem.ts
 The TodoItem interface defines the structure for a todo item, including:
 
-**id:** Unique identifier (number).
-**task:** The task description (string).
-**completed:** Whether the task is completed (boolean).
-**dueDate:** The due date of the task (Date).
+- **id:** Unique identifier (number).
+- **task:** The task description (string).
+- **completed:** Whether the task is completed (boolean).
+- **dueDate:** The due date of the task (Date).
 
 ## TodoList.ts
 The TodoList class implements the following methods to manage todo items:
